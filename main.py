@@ -4,11 +4,11 @@ import turtle as t
 tim = t.Turtle()
 scrn = t.Screen()
 
-tim.shape("turtle")
+tim.shape("classic")
 # tim.color("darkblue")
-tim.shapesize(1, 1, 5)
-tim.speed(8)
-tim.pensize(5)
+tim.shapesize(1, 1, 3)
+tim.speed("fastest")
+tim.pensize(3)
 
 
 def make_square():
@@ -75,10 +75,26 @@ def random_walk():
             tim.forward(20)
 
 
+def make_circle():
+    angle = 10
+    for x in range(220):
+        change_color()
+        tim.left(angle)
+        tim.circle(110)
+        angle +=10
 
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        change_color()
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
+
+
+# make_circle()
+# draw_spirograph(3)
+# tim.forward(100)
 # make_dashed_line()
 # shape_maker()
-random_walk()
+# random_walk()
 
 scrn.exitonclick()
-scrn.mode("lock")
